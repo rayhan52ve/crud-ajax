@@ -127,6 +127,7 @@
                 class="bi-plus-circle me-2"></i>Add New Employee</button>
           </div>
           <div class="card-body" id="show_all_employees">
+            @yield('content')
             <h1 class="text-center text-secondary my-5">Loading...</h1>
           </div>
         </div>
@@ -264,7 +265,7 @@
 
       function fetchAllEmployees() {
         $.ajax({
-          url: '{{ route('fetchAll') }}',
+          url: '{{ route('show') }}',
           method: 'get',
           success: function(response) {
             $("#show_all_employees").html(response);
